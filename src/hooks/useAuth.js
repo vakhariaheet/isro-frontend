@@ -1,16 +1,16 @@
 import { useDispatch, useSelector } from "react-redux"
 import ApiService from "../utils/ApiService";
-import { setUser } from "../redux/Slices/UserSlice";
+import { setUser } from "../redux/slices/UserSlice";
 
-const useAuth = () => { 
+const useAuth = () => {
     const user = useSelector(state => state.user);
     const dispatch = useDispatch();
 
-    const login = async (username, password) => { 
+    const login = async (username, password) => {
         if (!username || !password) throw new Error({
             message: 'Username and password are required',
             isSuccess: false,
-            data:{}
+            data: {}
         });
         const data = await ApiService.post('/auth/login', { username, password });
         const { user, tokens } = data.data;
@@ -20,22 +20,22 @@ const useAuth = () => {
         return data;
     }
 
-    const register = async (name, username, email, password) => { 
+    const register = async (name, username, email, password) => {
         if (!name || !username || !email || !password) throw new Error({
             message: 'All fields are required',
             isSuccess: false,
-            data:{}
+            data: {}
         });
         const data = await ApiService.post('/auth/register', {
             name, username, email, password
         });
-        
+
         return data;
     }
 
 
 
-    const logout = async () => { 
+    const logout = async () => {
         await ApiService.post('/auth/logout', {}, { protected: true });
         dispatch(setUser({}));
         localStorage.removeItem('accessToken');

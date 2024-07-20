@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { Register } from './components/Register';
-import { Login } from './components/Login';
+import { SignIn } from './pages/SignIn';
+import { SignUp } from './pages/SignUp';
 import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
@@ -14,8 +14,8 @@ function App() {
   return (
     <>
       <Routes>
-        <Route path='/register' element={<Register />} />
-        <Route path='/login' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/signin' element={<SignIn />} />
       </Routes>
       {
         // currentForm === 'login' ? <Login onFormSwitch={toggleForm} /> : <Register onFormSwitch={toggleForm} />
