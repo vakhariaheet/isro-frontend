@@ -5,6 +5,11 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontSize:{
+      heading_vm: ['2rem',{
+        fontWeight: '600'
+      }]
+    },
     extend: {
       colors: {
         purple: '#832161',
