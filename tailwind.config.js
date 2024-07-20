@@ -8,7 +8,9 @@ export default {
     extend: {
       colors: {
         purple: '#832161',
-        'purple-dark':'#3D2645'
+        'purple-dark': '#3D2645',
+        'placeholder': '#949494',
+        bg:'#F0EFF4'
       }
     },
   },
