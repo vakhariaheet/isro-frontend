@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from 'react-router-dom';
 
-export const SignUp = (props) => {
+const SignUp = (props) => {
   const [name, setName] = useState('');
   const [uname, setUname] = useState('');
   const [email, setEmail] = useState('');
@@ -21,13 +21,11 @@ export const SignUp = (props) => {
   }
 
   return (
-    <>
-      <div className="h-screen bg-white font-spaceGrotsek">
-        <div className="">
-          <h2 className="text-purple">Vocmaps</h2>
-          <p className="">FIND YOUR WAY, JUST SAY</p>
-        </div>
-        <svg className="w-1/4 h-1/3" viewBox="0 0 444 343" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <div className="h-screen font-space-grotsek bg-off-white flex justify-evenly">
+      <div className="flex flex-col items-center">
+        <h2 className="text-heading-primary text-purple tracking-[-0.06em] mt-9 ml-3">Vocmaps</h2>
+        <p className="text-subheading text-purple tracking-[0.2em]">FIND YOUR WAY, JUST SAY</p>
+        <svg className="w-4/6 h-1/2 mt-4 self-center" viewBox="0 0 444 343" fill="none" xmlns="http://www.w3.org/2000/svg">
           <g clipPath="url(#clip0_203_778)">
             <path d="M339.89 312.222C352.947 312.222 363.532 290.665 363.532 264.073C363.532 237.481 352.947 215.923 339.89 215.923C326.833 215.923 316.249 237.481 316.249 264.073C316.249 290.665 326.833 312.222 339.89 312.222Z" fill="#3F3D56" />
             <path d="M337.707 342.885C347.176 286.18 337.802 229.679 337.707 229.116L335.865 229.427C335.96 229.988 345.28 286.192 335.864 342.58L337.707 342.885Z" fill="#CACACA" />
@@ -67,37 +65,41 @@ export const SignUp = (props) => {
             </clipPath>
           </defs>
         </svg>
-        <div className="">
-          <p className="">Welcome To Vocmaps</p>
-          <form className="" onSubmit={handleSubmit}>
-            <input className="" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" id="name" name="name" />
-            <input className="" value={name} onChange={(e) => setUname(e.target.value)} type="text" placeholder="Username" id="uname" name="name" />
-            <input className="" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" id="email" name="email" />
-            <input className="" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Create Password" id="password" name="password" />
-            <svg classname="" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+      </div>
+      <div className="text-purple-dark font-normal flex flex-col items-center justify-center">
+        <p className="text-heading-secondary mb-4">Welcome To Vocmaps</p>
+        <form className="flex-col	flex gap-1.5" onSubmit={handleSubmit}> {/* 55%width, 12% input */}
+          <input className="text-input w-80 h-1/12 py-2 pl-4 rounded-md border border-purple-dark" value={name} onChange={(e) => setName(e.target.value)} type="text" placeholder="Name" id="name" name="name" />
+          <input className="text-input w-80 h-1/12 py-2 pl-4 rounded-md border border-purple-dark" value={name} onChange={(e) => setUname(e.target.value)} type="text" placeholder="Username" id="uname" name="name" />
+          <input className="text-input w-80 h-1/12 py-2 pl-4 rounded-md border border-purple-dark" value={email} onChange={(e) => setEmail(e.target.value)} type="email" placeholder="Email" id="email" name="email" />
+          <div className="flex relative">
+            <input className="text-input w-80 h-1/12 py-2 pl-4 rounded-md border border-purple-dark" value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder="Create Password" id="password" name="password" />
+            <svg className="h-6 w-6 absolute top-[20%] right-1.5 cursor-pointer" viewBox="0 0 38 38" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M23.7512 19C23.7512 21.6234 21.6246 23.75 19.0012 23.75C16.3779 23.75 14.2512 21.6234 14.2512 19C14.2512 16.3766 16.3779 14.25 19.0012 14.25C21.6246 14.25 23.7512 16.3766 23.7512 19Z" stroke="#3D2645" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
               <path d="M19.0019 7.9165C11.9123 7.9165 5.91104 12.5761 3.89343 18.9998C5.91101 25.4236 11.9123 30.0832 19.0019 30.0832C26.0915 30.0832 32.0928 25.4236 34.1104 18.9998C32.0928 12.5761 26.0915 7.9165 19.0019 7.9165Z" stroke="#3D2645" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" />
             </svg>
-            <button className="" type="submit">Continue</button>
-          </form>
-          <div className="">
-            <button className="">
-              <svg className="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 48 48">
-                <path fill="#fbc02d" d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12	s5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24s8.955,20,20,20	s20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z" /><path fill="#e53935" d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039	l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z" /><path fill="#4caf50" d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36	c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z" /><path fill="#1565c0" d="M43.611,20.083L43.595,20L42,20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571	c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z" />
-              </svg>
-              continue with google
-            </button>
-            <button className="">
-              <svg className="" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width={100} height={100} viewBox="0 0 48 48">
-                <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset={0} stopColor="#2aa4f4" /><stop offset={1} stopColor="#007ad9" /></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z" /><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z" />
-              </svg>
-              continue with facebook
-            </button>
           </div>
-          <p className="">Already have an account? <Link to="/signin">Sign In</Link></p>
-          <p className="">By Signing Up You agree to our <a href="#">Terms of Service</a>, <a href="#">Cookie Policy</a> & <a href="#">Privacy Policy</a></p>
+          <button className="text-btn w-80 mt-1.5 p-2 rounded-md bg-purple-dark text-off-white" type="submit">Continue</button>
+        </form>
+        <p className="text-signin-text mt-1.5">Already have an account? <Link to="/signin" className="font-bold">Sign In</Link></p>
+        <div className="flex gap-2.5 mt-2">
+          <button className="h-[7.5rem] w-[5.5rem] py-1 rounded-md border-2 border-purple-dark flex flex-col items-center">
+            <svg className="h-8 w-8 my-1" viewBox="0 0 54 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M27.5098 22.6563V33.1641H42.4805C40.5273 39.5313 35.2051 44.0918 27.5098 44.0918C18.3496 44.0918 10.918 36.6602 10.918 27.5C10.918 18.3399 18.3398 10.9082 27.5098 10.9082C31.6309 10.9082 35.3906 12.4219 38.291 14.9121L46.0254 7.16797C41.1426 2.71485 34.6387 0 27.5098 0C12.3145 0 0 12.3144 0 27.5C0 42.6856 12.3145 55 27.5098 55C50.5957 55 55.6934 33.4082 53.4277 22.6953L27.5098 22.6563Z" fill="#3D2645" />
+            </svg>
+            Continue With Google
+          </button>
+          <button className="h-[7.5rem] w-[5.5rem] py-1 rounded-md border-2 border-purple-dark flex flex-col items-center">
+            <svg className="h-8 w-8 my-1" viewBox="0 0 27 55" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M16.163 13.0961C16.163 13.6601 16.163 15.4983 16.163 18.1099H25.1421L24.1686 26.1142H16.163C16.163 38.4583 16.163 55 16.163 55H5.53693C5.53693 55 5.53693 38.6772 5.53693 26.1142H0V18.1099H5.53693C5.53693 14.9356 5.53693 12.6785 5.53693 12.05C5.53693 9.05566 5.31133 7.63491 6.58365 5.31458C7.85662 2.99435 11.4472 -0.0725275 17.6575 0.00130825C23.8693 0.0778348 26.4877 0.675409 26.4877 0.675409L25.1421 9.20602C25.1421 9.20602 21.1756 8.15865 19.2286 8.53192C17.2842 8.9053 16.163 10.103 16.163 13.0961Z" fill="#3D2645" />
+            </svg>
+            Continue With Facebook
+          </button>
         </div>
+        <p className="text-terms-agreement mt-3 w-80 text-center">By Signing Up You agree to our <a href="#" className="text-purple underline">Terms of Service</a>, <a href="#" className="text-purple underline">Cookie Policy</a> & <a href="#" className="text-purple underline">Privacy Policy</a></p>
       </div>
-    </>
+    </div>
   )
 }
+
+export default SignUp

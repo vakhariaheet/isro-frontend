@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export const SignIn = (props) => {
+const SignIn = (props) => {
   const [email, setEmail] = useState('');
   const [pass, setPass] = useState('');
 
@@ -82,3 +82,5 @@ export const SignIn = (props) => {
     </>
   )
 }
+
+export default SignIn
